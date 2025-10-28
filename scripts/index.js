@@ -12,12 +12,12 @@ const loadCustomerDetails = () => {
 
 // display customer details
 const displayCustomerDetails = (carts) => {
-  // console.log(carts);
+//   console.log(carts);
   const customer_details = document.getElementById("customer-datails");
   carts.forEach((id) => {
     const div = document.createElement("div");
     div.innerHTML = `
-          <div class="card bg-base-100 w-96 shadow-sm">
+          <div class="card bg-base-100 shadow-sm">
   <figure>
     <img class="w-40"
       src="./resources/image.webp"
@@ -30,7 +30,7 @@ const displayCustomerDetails = (carts) => {
  <h3 class="text-sm">Total: ${id.total}</h3>
  <h2 class="font-bold text-base">Discounted Total: ${id.discountedTotal}</h2>
     <div class="card-actions justify-center">
-      <button class="btn btn-primary">View Details</button>
+      <button onclick="loadViewCustomerDetails(${id.id})" class="btn btn-primary">View Details</button>
     </div>
   </div>
             </div>
